@@ -18,7 +18,16 @@
         {% comment %} <link href="{ % static '/css/style.css'}",rel='stylesheet'> {% endcomment %}
         <link rel="stylesheet" href="{% static '/css/style.css' %}"> 
     </head>
+    <title> {% block  'title' %}FindMoto . List Your Cars Today{% endblock   %} </title>
     <body>
+        {% if messages %}
+            {% for message in messages%}
+                <div {% if message.tags %} class="alert alert-{{message.tags}}" {% endif %}>
+                    {{message}}
+                </div>
+             {% endfor %}
+        {% endif %}
+
         {% block  'body' %}
         {% endblock   %} 
     </body>

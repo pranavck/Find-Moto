@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'main',
     'users'
 ]
@@ -103,6 +106,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+#Login
+LOGIN_URLC= '/login/'
+LOGIN_REDIRECT_URL = '/home/'
+
+#Messages
+MESSAGE_TAGS ={
+    messages.ERROR : 'danger'
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -125,6 +137,8 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 #Media saving (uploading Files)
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

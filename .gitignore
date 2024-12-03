@@ -1,2 +1,9 @@
+# Ignore virtual environment folders
 /venv/
-/__pycache__/
+
+# Ignore compiled Python files
+**/__pycache__/
+*.py[cod]
+
+# Ignore system files and logs
+*.log
